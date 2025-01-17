@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,15 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Liên kết các thành phần giao diện
-        EditText etInputNumbers = findViewById(R.id.et_input_numbers);
-        Button btnProcessNumbers = findViewById(R.id.btn_process_numbers);
+        EditText etInput = findViewById(R.id.et_input);
+        Button btnReverse = findViewById(R.id.btn_reverse);
         TextView tvResult = findViewById(R.id.tv_result);
 
-        EditText etInputString = findViewById(R.id.et_input_string);
-        Button btnReverseString = findViewById(R.id.btn_reverse_string);
-        TextView tvReversedString = findViewById(R.id.tv_reversed_string);
+        EditText etInputNumbers = findViewById(R.id.et_input_array);
+        Button btnProcessNumbers = findViewById(R.id.btn_filter);
+        TextView tvResultFilter = findViewById(R.id.tv_result_filter);
 
-        // Xử lý mảng ArrayList
         btnProcessNumbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,15 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
                 // Hiển thị kết quả vào TextView
                 String resultText = "Số chẵn: " + evenNumbers.toString() + "\nSố lẻ: " + oddNumbers.toString();
-                tvResult.setText(resultText);
+                tvResultFilter.setText(resultText);
             }
         });
 
+
         // Xử lý nút đảo ngược chuỗi
-        btnReverseString.setOnClickListener(new View.OnClickListener() {
+        btnReverse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String inputText = etInputString.getText().toString();
+                String inputText = etInput.getText().toString();
 
                 if (inputText.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter a string!", Toast.LENGTH_SHORT).show();
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 String result = reversedText.toString().trim().toUpperCase();
-                tvReversedString.setText(result);
+                tvResult.setText(result);
 
                 // Hiển thị Toast
                 Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();

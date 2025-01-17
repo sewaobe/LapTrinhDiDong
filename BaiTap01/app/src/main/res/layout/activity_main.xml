@@ -7,87 +7,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <!-- Hình ảnh sinh viên sử dụng CircleImageView -->
+        <!-- Hình ảnh bo tròn -->
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/civ_student"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/profile_image" />
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/profile_image"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF0000" />
 
-        <!-- TextView để hiển thị thông tin sinh viên -->
+        <!-- Tên sinh viên -->
         <TextView
-            android:id="@+id/tv_student_info"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/civ_student"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:text="Nguyễn Phúc Bảo - 22110285"
+            android:textSize="18sp"
             android:layout_gravity="center"
-            android:text="\t\t\t\t\t\t\t Nguyễn Phúc Bảo - 22110285 \n Sinh viên trường đại học Sư Phạm Kỹ Thuật TPHCM" />
+            android:layout_marginTop="8dp"/>
 
-        <!-- EditText để người dùng nhập mảng số -->
+        <!-- Thông tin thêm -->
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sinh viên trường Sư Phạm Kỹ Thuật HCMUTE"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"/>
+
+        <!-- EditText nhập chuỗi -->
         <EditText
-            android:id="@+id/et_input_numbers"
+            android:id="@+id/et_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_student_info"
-            android:layout_marginTop="20dp"
-            android:hint="Nhập các số cách nhau bằng dấu phẩy"
-            android:inputType="text" />
+            android:hint="Enter text"
+            android:layout_marginTop="16dp"/>
 
-        <!-- Button để xử lý mảng số -->
+        <!-- Nút đảo ngược -->
         <Button
-            android:id="@+id/btn_process_numbers"
+            android:id="@+id/btn_reverse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/et_input_numbers"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="Xử lý mảng số" />
+            android:text="Reverse Text"
+            android:layout_gravity="center"/>
 
-        <!-- TextView để hiển thị kết quả -->
+        <!-- Kết quả đảo ngược -->
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_process_numbers"
-            android:layout_marginTop="20dp"
-            android:textSize="18sp" />
-
-        <!-- EditText để người dùng nhập chuỗi để đảo ngược -->
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+        <!-- EditText nhập mang o -->
         <EditText
-            android:id="@+id/et_input_string"
+            android:id="@+id/et_input_array"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_result"
-            android:layout_marginTop="20dp"
-            android:hint="Nhập chuỗi ký tự" />
+            android:hint="Enter array"
+            android:layout_marginTop="16dp"/>
 
-        <!-- Button để đảo ngược chuỗi -->
+        <!-- Nút đảo ngược -->
         <Button
-            android:id="@+id/btn_reverse_string"
+            android:id="@+id/btn_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/et_input_string"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="Đảo ngược chuỗi" />
+            android:text="Filter Array"
+            android:layout_gravity="center"/>
 
-        <!-- TextView để hiển thị chuỗi đảo ngược -->
+        <!-- Kết quả loc -->
         <TextView
-            android:id="@+id/tv_reversed_string"
+            android:id="@+id/tv_result_filter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_reverse_string"
-            android:layout_marginTop="20dp"
-            android:textSize="18sp" />
-    </RelativeLayout>
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
