@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh đơn hàng</title>
+    <!-- diff2html CSS từ CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+</head>
+<body>
+<h1>Kết quả so sánh đơn hàng</h1>
+<div id="diffOutput"></div>
+
+<!-- diff2html JS từ CDN -->
+<script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
+<script>
+    fetch('/api/diff')  // Endpoint lấy unified diff
+        .then(response => response.text())
+        .then(diffText => {
+            // Thay đổi outputFormat thành 'side-by-side'
+            const diffHtml = Diff2Html.html(diffText, {
+                drawFileList: true,
+                matching: 'lines',
+                outputFormat: 'side-by-side'
+            });
+            document.getElementById('diffOutput').innerHTML = diffHtml;
+        })
+        .catch(error => {
+            console.error('Error fetching diff:', error);
+        });
+</script>
+</body>
+</html>
