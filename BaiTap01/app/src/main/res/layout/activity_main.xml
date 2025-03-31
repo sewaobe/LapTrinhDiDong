@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Hình ảnh bo tròn -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/profile_image"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF0000" />
+
+        <!-- Tên sinh viên -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nguyễn Phúc Bảo - 22110285"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Thông tin thêm -->
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sinh viên trường Sư Phạm Kỹ Thuật HCMUTE"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"/>
+
+        <!-- EditText nhập chuỗi -->
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter text"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Nút đảo ngược -->
+        <Button
+            android:id="@+id/btn_reverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reverse Text"
+            android:layout_gravity="center"/>
+
+        <!-- Kết quả đảo ngược -->
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+        <!-- EditText nhập mang o -->
+        <EditText
+            android:id="@+id/et_input_array"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter array"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Nút đảo ngược -->
+        <Button
+            android:id="@+id/btn_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter Array"
+            android:layout_gravity="center"/>
+
+        <!-- Kết quả loc -->
+        <TextView
+            android:id="@+id/tv_result_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
